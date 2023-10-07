@@ -1,14 +1,14 @@
-const drawer = document.querySelector(#drawerMenu)
-
+const drawer = document.getElementById("drawerMenu")
+const contactMenu = document.getElementById("chat-container")
 
 
 function drwerMenu () {
     drawer.addEventListener('click', e =>{
-            if (drawer.display = none){
-                drawer.display = block
+            if (contactMenu.display === "flex"){
+                contactMenu.display = "hidden"
             }else
-            if(drawer.display = block){
-                drawer.display = none
+            if(drawer.display === "hidden"){
+                drawer.display === "block"
                 return
             }
     })
