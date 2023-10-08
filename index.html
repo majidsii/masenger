@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,289 +8,377 @@
     <link rel="stylesheet" href="css/scrollbarstyle.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-   
+
 </head>
+
 <body class="bg-[#34393C]">
     <!-- برای کل صفحه یک تگ والد و ظرف ساختم  -->
-    <div class="h-screen w-screen flex align-middle justify-center overflow-x-hidden"id="container">
-    <!-- قسمت سمت چپ صفحه چت  -->
-        <div class="bg-[#202329] h-screen rounded-r-2xl w-80" id="Contact-menu ">
-                    <div id="drawerMenu" class="w-full h-16 flex justify-end pt-3 pr-3 cursor-pointer">
-                        <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><path d="M96.094,47.07v5.859H3.906V47.07H96.094z M100,43.164H0v13.672h100V43.164z M96.094,20.991v5.859H3.906v-5.859H96.094z    M100,17.085H0v13.672h100V17.085z M96.094,73.149v5.859H3.906v-5.859H96.094z M100,69.243H0v13.672h100V69.243z"/></g></svg>
-                     </div>
-                    <div id="search-bar"class="flex justify-center mb-5 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="w-12 h-16 bg-[#2E333D] fill-slate-500 rounded-l-lg cursor-pointer">
-                            <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"/>
-                        </svg>
-                        <input type="search" class="border-0 focus:border-black h-16 rounded-r-lg bg-[#2E333D] P-3 " placeholder="SEARCH">
+    <div class="h-screen w-screen flex align-middle justify-center" id="container">
+        <!--  قسمت سمت چپ صفحه چت که لیست مخاطبین در ان قرار دارد -->
+        <div class="bg-[#202329] h-[619px] lg:block min-[425px]:hidden min-[375px]:hidden min-[320px]:hidden"
+            id="Contact-menu ">
+            <!-- محدوده قسمت سرچ در مخاطبین ک ایکون رو با svg قرار دادم -->
+            <div id="search-bar" class="flex justify-center mb-5 mt-16">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"
+                    class="w-12 h-16 bg-[#2E333D] fill-slate-500 rounded-l-lg cursor-pointer">
+                    <path
+                        d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+                </svg>
+                <input type="search" class="border-0 focus:border-black h-16 rounded-r-lg bg-[#2E333D] P-3 "
+                    placeholder="SEARCH">
+            </div>
+
+            <!-- در این قسمت کد های مربوط به لیست مخاطبین قرار دارد -->
+            <div id="contact-list" class="overflow-scroll h-[400px] overflow-x-hidden cursor-pointer p-2 w-80">
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avatar"
+                        class=" font-bold bg-yellow-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <SPAn>HA</SPAn>
                     </div>
-                    
-                    
-                    <div id="contact-list" class=" overflow-scroll h-3/4 overflow-x-hidden cursor-pointer p-2 w-80">
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avatar" class=" font-bold bg-yellow-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <SPAn >HA</SPAn>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                    <div class="flex justify-between items-center w-full">
-                                        <h3 id="contact-name" class="m-0 mt-3 font-bold text-lg text-slate-500">
-                                            Hamid
-                                        </h3>
-                                        <h4 class="text-slate-400 text-sm mt-3">
-                                            8:24 am
-                                        </h4>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                            <p class="text-slate-300 opacity-50 text-xs">
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                            </p>
-                                            <div class="bg-[#1ca2ef] rounded-3xl w-8 text-center">
-                                                <span>1</span>
-                                            </div>
-                                    </div>
-                                    
-                            </div>
-                            
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="m-0 mt-3 font-bold text-lg text-slate-500">
+                                Hamid
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                8:24 am
+                            </h4>
                         </div>
-                        <div id="contact-info-in-list" class="flex  align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avatar" class="font-bold bg-purple-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>SA</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Saeedeh
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        6:24 am
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 text-center">
+                                <span>1</span>
                             </div>
                         </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avatar" class="font-bold bg-pink-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>AL</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between item-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Ali
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        5:40 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
+
+                    </div>
+
+                </div>
+                <div id="contact-info-in-list" class="flex  align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avatar"
+                        class="font-bold bg-purple-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>SA</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Saeedeh
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                6:24 am
+                            </h4>
                         </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avatar" class="font-bold bg-blue-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>AR</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Aref
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        4:29 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                <p class="text-slate-300 opacity-50 text-xs">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                </p>
-                                <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                    <span>1</span>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-green-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>SA</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Sajad
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        5:51 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-red-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>MO</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Mojtaba
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        7:00 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-amber-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>MO</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Mohammad
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        11:00 am
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-sky-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>MA</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Mamon
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        1:30 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-pink-300 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>BA</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Baba
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        5:48 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-fuchsia-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>AM</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Amirhosein
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        8:00 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
-                            <div id="avater" class="font-bold bg-lime-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
-                                <span>RA</span>
-                            </div>
-                            <div id="contact-info-in-list-text" class="w-full ml-2">
-                                <div class="flex justify-between items-center w-full">
-                                    <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
-                                        Ramin
-                                    </h3>
-                                    <h4 class="text-slate-400 text-sm mt-3">
-                                        3:33 pm
-                                    </h4>
-                                </div>
-                                <div class="flex justify-between text-center">
-                                    <p class="text-slate-300 opacity-50 text-xs">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit....
-                                    </p>
-                                    <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
-                                        <span>1</span>
-                                    </div>
-                                </div>
+                        <div class="flex justify-between items-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 text-center">
+                                <span>1</span>
                             </div>
                         </div>
                     </div>
-        <footer class="text-enter m-10 text-slate-500 ">
-            <p > powerd by <a href="https://github.com/majidsii">&#169; MAJID</a></p>
-        </footer>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avatar"
+                        class="font-bold bg-pink-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>AL</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between item-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Ali
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                5:40 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avatar"
+                        class="font-bold bg-blue-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>AR</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Aref
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                4:29 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-green-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>SA</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Sajad
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                5:51 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-red-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>MO</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Mojtaba
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                7:00 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-amber-500 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>MO</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Mohammad
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                11:00 am
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-sky-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>MA</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Mamon
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                1:30 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-pink-300 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>BA</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Baba
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                5:48 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-fuchsia-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>AM</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Amirhosein
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                8:00 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="contact-info-in-list" class="flex align-middle hover:bg-[#34393c] px-6 h-20 hover:rounded-lg">
+                    <div id="avater"
+                        class="font-bold bg-lime-400 w-20 h-14 rounded-lg text-center pt-3 text-2xl my-auto">
+                        <span>RA</span>
+                    </div>
+                    <div id="contact-info-in-list-text" class="w-full ml-2">
+                        <div class="flex justify-between items-center w-full">
+                            <h3 id="contact-name" class="mt-3 font-bold text-lg text-slate-500">
+                                Ramin
+                            </h3>
+                            <h4 class="text-slate-400 text-sm mt-3">
+                                3:33 pm
+                            </h4>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-slate-300 opacity-50 text-xs">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit....
+                            </p>
+                            <div class="bg-[#1ca2ef] rounded-3xl w-8 h-6 text-center">
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="text-enter m-10 text-slate-500 ">
+                <p> powerd by <a href="https://github.com/majidsii">&#169; MAJID</a></p>
+            </footer>
         </div>
-        <div id="chat-container" class="bg-[#34393c] h-screen w-screen">
+
+        <!-- قسمت چت صفحه  -->
+
+        <div id="chat-container" class="bg-[#202329] h-screen w-screen">
+            <!-- قسمت هدر چت ک نام مخاطب در ان قرار دارد و ایکون دراور شدن لیست مخاطبین ک با کلیک بر روی ان لیست مخاطبین پنهان وظاهر میشود -->
+            <div id="chat-header" class="w-full bg-[#202329] h-fit flex p-4 border-b-2 ">
+                <div id="drawerMenu" class="w-16 h-16 flex  pt-3 pr-3 cursor-pointer">
+                    <svg class="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" x="0px" y="0px" viewBox="0 0 100 125" style="enable-background:new 0 0 100 100;"
+                        xml:space="preserve">
+                        <g>
+                            <path
+                                d="M96.094,47.07v5.859H3.906V47.07H96.094z M100,43.164H0v13.672h100V43.164z M96.094,20.991v5.859H3.906v-5.859H96.094z    M100,17.085H0v13.672h100V17.085z M96.094,73.149v5.859H3.906v-5.859H96.094z M100,69.243H0v13.672h100V69.243z" />
+                        </g>
+                    </svg>
+                </div>
+                <h1 class="font-bold text-4xl text-slate-300 pt-2">Hamid</h1>
+            </div>
+            <!-- قسمت بدنه چت ک پیام ها و نام مخاطب و اینپوت تایپ کردن پیام ها در ان قرار دارد -->
+            <div id="chat-body" class="flex justify-center flex-col mx-auto p-3 w-full overflow-hidden">
+                <div id="chat-avatar" class="flex items-end mt-5">
+                    <div id="avatar2" class="bg-yellow-500 text-center w-14 h-14 pt-3 text-2xl font-bold rounded-full">
+                        <span class="">HA</span>
+                    </div>
+                    <div id="chat-massadge" class="bg-[#30333c] w-2/4 p-5 ml-5 rounded-lg text-slate-300 relative">
+                        <img src="./img/pm.png" alt="pm" class="w-5 absolute -left-[9px] -bottom-[8px]" />
+                        <span class="">Hamid</span>
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Eveniet quo illo sequi aliquam dolor assumenda, optio doloribus
+                            saepe delectus minima.
+                        </p>
+                        <span class="flex justify-end text-xs">
+                            8:24
+                        </span>
+                    </div>
+                </div>
+                <div id="chat-avatar" class="flex justify-end items-end m-6">
+                    <div id="contact-massage" class="bg-[#6B8AFE] text-slate-300 w-2/4 mr-5 p-5 rounded-lg relative ">
+                        <img src="./img/pm-right.png" alt="pm" class="w-5 absolute -left-[-749px] -bottom-[4px]" />
+                        <span>Me</span>
+                        <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Eveniet quo illo sequi aliquam dolor assumenda, optio doloribus
+                            saepe delectus minima.
+                        </P>
+                        <span class=" text-xs">
+                            8:24
+                        </span>
+                    </div>
+                    <div id="avatar2" class="bg-sky-500 text-center w-14 h-14 pt-3 text-2xl font-bold rounded-full">
+                        <span class="">ME</span>
+                    </div>
+                </div>
+                <div class="ml-5 mt-8 flex ">
+                    <input type="text" placeholder="Send Massage ...."
+                        class="fix w-11/12 outline-none rounded-lg border-none bg-[#2e333d]">
+
+                    <svg class="h-12 w-12 ml-2 cursor-pointer" fill="#000000" width="800px" height="800px"
+                        viewBox="0 0 24 24" id="send" data-name="Flat Line" xmlns="http://www.w3.org/2000/svg"
+                        class="icon flat-line">
+                        <path id="secondary"
+                            d="M5.44,4.15l14.65,7a1,1,0,0,1,0,1.8l-14.65,7A1,1,0,0,1,4.1,18.54l2.72-6.13a1.06,1.06,0,0,0,0-.82L4.1,5.46A1,1,0,0,1,5.44,4.15Z"
+                            style="fill: rgb(44, 169, 188); stroke-width: 2;"></path>
+                        <path id="primary"
+                            d="M7,12h4M4.1,5.46l2.72,6.13a1.06,1.06,0,0,1,0,.82L4.1,18.54a1,1,0,0,0,1.34,1.31l14.65-7a1,1,0,0,0,0-1.8L5.44,4.15A1,1,0,0,0,4.1,5.46Z"
+                            style="fill: none; stroke: rgb(0, 0, 0); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+
 
         </div>
-        
+
+
     </div>
+    <!-- فایل جاوا اسکریپت  -->
     <script src="massanger.js"></script>
 </body>
+
 </html>
